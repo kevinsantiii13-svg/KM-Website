@@ -296,6 +296,9 @@ a.contact-item:hover { border-color: rgba(255,255,255,.4); background: rgba(255,
 .ba-section { background: var(--paper); }
 .ba-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
 .ba-pair h3 { font-size: 22px; margin-top: 16px; }
+.ba-feature { grid-column: 1 / -1; }
+.ba-feature .ba { aspect-ratio: 16 / 10; }
+@media (max-width: 860px) { .ba-feature .ba { aspect-ratio: 4 / 3; } }
 
 /* Lightbox */
 .lightbox {
