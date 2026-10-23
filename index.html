@@ -3,53 +3,280 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KM — Coming Soon</title>
-  <meta name="description" content="Our new website is on its way.">
+  <title>KM Home Improvement | Kitchens, Bathrooms, Basements, Decks &amp; Painting</title>
+  <meta name="description" content="KM Home Improvement — residential and commercial remodeling: kitchens, bathrooms, basements, decks, painting and whole-home renovations. Call (508) 969-6252 for a free quote.">
+  <meta property="og:title" content="KM Home Improvement | Better rooms. Better living.">
+  <meta property="og:description" content="Kitchens, bathrooms, basements, decks, painting and whole-home renovations. Free quotes: (508) 969-6252.">
+  <meta property="og:image" content="/images/hero.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#141615">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #f5f2ec;
-      --ink: #1c1b19;
-      --muted: #6b675f;
-      --line: #d9d3c7;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg: #151413; --ink: #f2efe9; --muted: #9a958b; --line: #2e2c29; }
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: "Inter", system-ui, sans-serif;
-      display: grid;
-      place-items: center;
-      padding: 24px 16px;
-    }
-    main { text-align: center; max-width: 560px; }
-    .mark {
-      font-family: "Fraunces", Georgia, serif;
-      font-weight: 500;
-      font-size: clamp(64px, 14vw, 112px);
-      letter-spacing: -0.03em;
-      line-height: 1;
-    }
-    .rule { width: 48px; height: 1px; background: var(--line); margin: 32px auto; }
-    h1 { font-size: 15px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; }
-    p { margin-top: 12px; color: var(--muted); font-size: 16px; line-height: 1.6; }
-    footer { position: fixed; bottom: 20px; left: 0; right: 0; text-align: center; font-size: 12px; color: var(--muted); }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preload" as="image" href="/images/hero.jpg">
 </head>
 <body>
-  <main>
-    <div class="mark">KM</div>
-    <div class="rule"></div>
-    <h1>Coming soon</h1>
-    <p>Our new website is on its way. Check back shortly.</p>
-  </main>
-  <footer>&copy; <span id="y">2026</span> KM</footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="KM Home Improvement — home"><img src="/images/logo.png" alt="KM Home Improvement" width="425" height="275"></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Before &amp; After</a></li>
+      <li><a href="/gallery">Gallery</a></li>
+      <li><a href="#process">How We Work</a></li>
+      <li><a href="#quote">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:+15089696252">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span>(508) 969-6252</span>
+      </a>
+      <a class="btn btn-red" href="#quote">Free Quote</a>
+    </div>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"><img src="/images/hero.jpg" alt="" fetchpriority="high"></div>
+    <div class="wrap hero-inner">
+      <span class="eyebrow">Residential &amp; Commercial Construction</span>
+      <h1>Your <span class="accent">dream home</span> is one call away.</h1>
+      <p class="hero-lede">From the first conversation to the final walkthrough, KM Home Improvement builds thoughtful upgrades for the spaces that carry your everyday life.</p>
+      <div class="hero-actions">
+        <a class="btn btn-red" href="#quote">Get your free quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="tel:+15089696252">Call (508) 969-6252</a>
+      </div>
+      <div class="hero-strip" aria-label="What we do">
+        <span>Kitchens</span><span>Bathrooms</span><span>Basements</span><span>Decks</span><span>Painting</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Services</span>
+          <h2>Focused on the spaces that make a home.</h2>
+        </div>
+        <p>One team for the whole project, whether it's a single room refresh or a top-to-bottom renovation.</p>
+      </div>
+
+      <div class="service-grid">
+        <a class="service reveal" href="/gallery#kitchens">
+          <img src="/images/kitchen.jpg" alt="Renovated white kitchen with a charcoal island" loading="lazy">
+          <div class="service-body">
+            <span class="service-num">01</span>
+            <h3>Kitchen Remodeling</h3>
+            <p>Durable materials, smart storage and layouts that make everyday cooking easier.</p>
+          </div>
+        </a>
+        <a class="service reveal" href="/gallery#bathrooms">
+          <img src="/images/bathroom.jpg" alt="Bright bathroom with a wood vanity and walk-in shower" loading="lazy">
+          <div class="service-body">
+            <span class="service-num">02</span>
+            <h3>Bathroom Renovation</h3>
+            <p>Calm, hard-working bathrooms with clean tile work and fixtures built to last.</p>
+          </div>
+        </a>
+        <a class="service reveal" href="/gallery#basements">
+          <img src="/images/basement.jpg" alt="Finished basement living room with built-in media wall" loading="lazy">
+          <div class="service-body">
+            <span class="service-num">03</span>
+            <h3>Basement Finishing</h3>
+            <p>Turn unused square footage into a family room, office, gym or guest space.</p>
+          </div>
+        </a>
+        <a class="service reveal" href="/gallery#decks">
+          <img src="/images/deck.jpg" alt="New wood deck with lighting and outdoor dining" loading="lazy">
+          <div class="service-body">
+            <span class="service-num">04</span>
+            <h3>Decks &amp; Outdoor Living</h3>
+            <p>New decks, rebuilds and outdoor spaces made for long summer evenings.</p>
+          </div>
+        </a>
+        <a class="service service-noimg reveal" href="/gallery#painting">
+          <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="15" height="6" rx="1.5"/><path d="M18 6h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-8v3"/><rect x="10" y="14" width="4" height="7" rx="1"/></svg></span>
+          <div class="service-body">
+            <span class="service-num">05</span>
+            <h3>Interior &amp; Exterior Painting</h3>
+            <p>Careful prep, crisp lines and finishes that hold up, inside and out.</p>
+          </div>
+        </a>
+        <a class="service reveal" href="/gallery#other">
+          <img src="/images/entry.jpg" alt="Custom mudroom with built-in bench and cubbies" loading="lazy">
+          <div class="service-body">
+            <span class="service-num">06</span>
+            <h3>Whole-Home &amp; Repairs</h3>
+            <p>Carpentry, built-ins, flooring, drywall and the upgrades that tie it all together.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE / AFTER -->
+  <section class="section transform" id="work">
+    <div class="wrap ba-grid">
+      <div class="ba reveal">
+        <img src="/images/kitchen-before.jpg" alt="Kitchen before the remodel" class="ba-before">
+        <img src="/images/kitchen-after.jpg" alt="Kitchen after the remodel" class="ba-after">
+        <span class="ba-label before">Before</span>
+        <span class="ba-label after">After</span>
+        <div class="ba-handle"><span class="ba-knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+      </div>
+      <div class="ba-copy reveal">
+        <span class="eyebrow">Before &amp; After</span>
+        <h3>Dreams into reality.</h3>
+        <p>Drag the slider to see the difference. If you can dream it, we can build it.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>A clear plan and written quote before work begins</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>One point of contact from start to finish</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Respect for your home while we work</li>
+        </ul>
+        <a class="btn btn-red" href="/gallery">See the full gallery
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section process" id="process">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">How We Work</span>
+          <h2>Simple from the first call.</h2>
+        </div>
+        <p>No guesswork. You'll know what's happening, what it costs and when it'll be done.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num">01</div>
+          <h3>Talk it through</h3>
+          <p>Call, text or send a request. Tell us what you have in mind and we'll set up a visit.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">02</div>
+          <h3>Free estimate</h3>
+          <p>We measure, listen and give you a clear written quote with the scope spelled out.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">03</div>
+          <h3>We build</h3>
+          <p>Our crew gets to work on schedule, keeps the site clean and keeps you updated.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">04</div>
+          <h3>Final walkthrough</h3>
+          <p>We walk the finished space with you and make sure every detail is right.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="section quote" id="quote">
+    <div class="wrap quote-grid">
+      <div class="reveal">
+        <span class="eyebrow">Your Home, Next</span>
+        <h2>Ready to make a change?</h2>
+        <p class="quote-lede">Tell us about your project and we'll get back to you to set up a free estimate. Prefer to talk? Give us a call.</p>
+        <div class="contact-list">
+          <a class="contact-item" href="tel:+15089696252">
+            <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+            <span><small>Call us</small><strong>(508) 969-6252</strong></span>
+          </a>
+          <a class="contact-item" href="sms:+15089696252">
+            <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span>
+            <span><small>Text us</small><strong>Send photos of your space</strong></span>
+          </a>
+        </div>
+      </div>
+
+      <form class="form-card reveal" id="quote-form" novalidate>
+        <h3>Request a free quote</h3>
+        <p>Takes about a minute.</p>
+        <div class="form-row">
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="f-email">Email <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="f-town">Town</label><input id="f-town" name="town" autocomplete="address-level2"></div>
+        </div>
+        <div class="field">
+          <label for="f-project">Project type</label>
+          <select id="f-project" name="project" required>
+            <option value="" disabled selected>Choose one</option>
+            <option>Kitchen remodel</option>
+            <option>Bathroom renovation</option>
+            <option>Basement finishing</option>
+            <option>Deck / outdoor</option>
+            <option>Painting</option>
+            <option>Whole-home renovation</option>
+            <option>Repairs / other</option>
+          </select>
+        </div>
+        <div class="field"><label for="f-details">Tell us about it</label><textarea id="f-details" name="details" placeholder="What would you like done? Any timeline or budget in mind?"></textarea></div>
+        <button class="btn btn-red" type="submit">Send my request</button>
+        <p class="form-note">Free estimates. No obligation.</p>
+        <div class="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="/images/logo.png" alt="KM Home Improvement" width="425" height="275" loading="lazy">
+        <p style="max-width:38ch">Thoughtful residential improvements, shaped around the way you live now and the way you want your home to feel next.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/#process">How we work</a></li>
+          <li><a href="/#quote">Free quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="tel:+15089696252">(508) 969-6252</a></li>
+          <li><a href="sms:+15089696252">Text us</a></li>
+          <li><a href="/#quote">Request a quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> KM Home Improvement</span>
+      <span>Residential renovations &amp; finishing work</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a class="btn btn-ghost" href="tel:+15089696252">Call now</a>
+  <a class="btn btn-red" href="#quote">Free quote</a>
+</div>
+
+<script src="/js/site.js"></script>
 </body>
 </html>
