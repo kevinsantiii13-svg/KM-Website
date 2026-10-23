@@ -84,7 +84,7 @@ button { font: inherit; }
 }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: flex; align-items: center; text-decoration: none; }
-.brand img { height: 46px; width: auto; }
+.brand img { height: 52px; width: auto; }
 .nav-links { display: flex; align-items: center; gap: 34px; list-style: none; margin: 0; padding: 0; }
 .nav-links a {
   color: rgba(255,255,255,.82); text-decoration: none; font-size: 14px; font-weight: 500;
@@ -246,7 +246,7 @@ a.contact-item:hover { border-color: rgba(255,255,255,.4); background: rgba(255,
 /* Footer */
 .site-footer { background: var(--charcoal); color: rgba(255,255,255,.7); padding: 72px 0 34px; font-size: 15px; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; }
-.footer-grid img { height: 60px; width: auto; margin-bottom: 20px; }
+.footer-grid img { height: 72px; width: auto; margin-bottom: 20px; }
 .footer-grid h4 { font-family: var(--body); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: #fff; margin-bottom: 18px; font-weight: 700; }
 .footer-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
 .footer-grid a { text-decoration: none; transition: color .2s; }
@@ -378,7 +378,7 @@ a.contact-item:hover { border-color: rgba(255,255,255,.4); background: rgba(255,
   .steps { border-top: 0; }
   .form-row { grid-template-columns: 1fr; gap: 0; }
   .form-card { padding: 26px 20px; }
-  .brand img { height: 38px; }
+  .brand img { height: 44px; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-grid > div:first-child { grid-column: auto; }
   .page-hero { padding: 130px 0 60px; }

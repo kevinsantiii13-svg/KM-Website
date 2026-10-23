@@ -60,7 +60,7 @@ const CATEGORIES = {
       grid.appendChild(btn);
     });
     if (!visible.length) {
-      grid.innerHTML = `<div class="g-empty">${icon}<strong>${CATEGORIES[cat]} photos coming soon</strong>We're adding new projects. Call (508) 969-6252 to see examples of our ${CATEGORIES[cat].toLowerCase()} work.</div>`;
+      grid.innerHTML = `<div class="g-empty">${icon}<strong>${CATEGORIES[cat]} photos coming soon</strong>We're adding new projects. Call 508-969-6252 to see examples of our ${CATEGORIES[cat].toLowerCase()} work.</div>`;
     }
   }
 

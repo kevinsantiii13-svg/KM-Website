@@ -1,6 +1,6 @@
 // KM Home Improvement — shared behaviour
 const KM = {
-  phone: '(508) 969-6252',
+  phone: '508-969-6252',
   phoneTel: '+15089696252',
   // Set this to the business email to have quote requests open an email to it.
   // While empty, the form opens a text message to the phone number instead.
