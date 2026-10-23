@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KM — Coming Soon</title>
+  <meta name="description" content="Our new website is on its way.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f2ec;
+      --ink: #1c1b19;
+      --muted: #6b675f;
+      --line: #d9d3c7;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #151413; --ink: #f2efe9; --muted: #9a958b; --line: #2e2c29; }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", system-ui, sans-serif;
+      display: grid;
+      place-items: center;
+      padding: 24px 16px;
+    }
+    main { text-align: center; max-width: 560px; }
+    .mark {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(64px, 14vw, 112px);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .rule { width: 48px; height: 1px; background: var(--line); margin: 32px auto; }
+    h1 { font-size: 15px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; }
+    p { margin-top: 12px; color: var(--muted); font-size: 16px; line-height: 1.6; }
+    footer { position: fixed; bottom: 20px; left: 0; right: 0; text-align: center; font-size: 12px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="mark">KM</div>
+    <div class="rule"></div>
+    <h1>Coming soon</h1>
+    <p>Our new website is on its way. Check back shortly.</p>
+  </main>
+  <footer>&copy; <span id="y">2026</span> KM</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
