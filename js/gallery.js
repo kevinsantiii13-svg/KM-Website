@@ -4,11 +4,18 @@ const PHOTOS = [
   { src: '/images/bathroom-real.jpg',  category: 'bathrooms', title: 'Marble primary bathroom' },
   { src: '/images/kitchen.jpg',        category: 'kitchens',  title: 'Warm, considered kitchen' },
   { src: '/images/kitchen-after.jpg',  category: 'kitchens',  title: 'Open-plan kitchen refresh' },
-  { src: '/images/bathroom.jpg',       category: 'bathrooms', title: 'A quieter morning' },
   { src: '/images/basement.jpg',       category: 'basements', title: 'Room to gather' },
   { src: '/images/deck.jpg',           category: 'decks',     title: 'Outside, made useful' },
   { src: '/images/deck-after.jpg',     category: 'decks',     title: 'Evening-ready deck' },
   { src: '/images/entry.jpg',          category: 'other',     title: 'Custom entry & mudroom' },
+];
+
+// Before & after projects. Add new ones at the top; they show first.
+// real: true marks actual KM projects (placeholders have real: false).
+const BEFORE_AFTER = [
+  { before: '/images/bathroom-before.jpg', after: '/images/bathroom-after.jpg', category: 'bathrooms', title: 'Primary bathroom remodel', real: true },
+  { before: '/images/kitchen-before.jpg',  after: '/images/kitchen-after.jpg',  category: 'kitchens',  title: 'Kitchen transformation', real: false },
+  { before: '/images/deck-before.jpg',     after: '/images/deck-after.jpg',     category: 'decks',     title: 'Outdoor living transformation', real: false },
 ];
 
 const CATEGORIES = {
@@ -27,7 +34,8 @@ const CATEGORIES = {
   if (!grid || !filters) return;
 
   const counts = PHOTOS.reduce((c, p) => (c[p.category] = (c[p.category] || 0) + 1, c), {});
-  counts.all = PHOTOS.length;
+  BEFORE_AFTER.forEach(p => { counts[p.category] = (counts[p.category] || 0) + 1; });
+  counts.all = PHOTOS.length + BEFORE_AFTER.length;
 
   // Build filter buttons
   Object.entries(CATEGORIES).forEach(([key, label]) => {
@@ -51,6 +59,25 @@ const CATEGORIES = {
     if (!CATEGORIES[cat]) cat = 'all';
     filters.querySelectorAll('.filter').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.cat === cat)));
     visible = PHOTOS.filter(p => cat === 'all' || p.category === cat);
+    const baWrap = document.getElementById('ba-wrap');
+    const baList = document.getElementById('ba-list');
+    const photosHead = document.getElementById('photos-head');
+    const pairs = BEFORE_AFTER.filter(p => cat === 'all' || p.category === cat);
+    baList.innerHTML = pairs.map((p, i) => `
+      <div class="ba-item${i === 0 ? ' ba-feature' : ''}">
+        <div class="ba">
+          <img src="${p.before}" alt="${p.title}, before" class="ba-before">
+          <img src="${p.after}" alt="${p.title}, after" class="ba-after">
+          <span class="ba-label before">Before</span>
+          <span class="ba-label after">After</span>
+          <div class="ba-handle"><span class="ba-knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Drag to compare ${p.title} before and after">
+        </div>
+        <h3><small>${CATEGORIES[p.category]}</small>${p.title}</h3>
+      </div>`).join('');
+    baWrap.hidden = !pairs.length;
+    photosHead.hidden = !pairs.length || !visible.length;
+    if (typeof initBeforeAfter === 'function') initBeforeAfter(baList);
     grid.innerHTML = '';
     visible.forEach((p, i) => {
       const btn = document.createElement('button');
@@ -60,7 +87,7 @@ const CATEGORIES = {
       btn.addEventListener('click', () => openLightbox(i));
       grid.appendChild(btn);
     });
-    if (!visible.length) {
+    if (!visible.length && !pairs.length) {
       grid.innerHTML = `<div class="g-empty">${icon}<strong>${CATEGORIES[cat]} photos coming soon</strong>We're adding new projects. Call 508-969-6252 to see examples of our ${CATEGORIES[cat].toLowerCase()} work.</div>`;
     }
   }

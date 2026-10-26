@@ -41,63 +41,22 @@
     <div class="wrap">
       <span class="eyebrow">Our Work</span>
       <h1>Dreams into reality.</h1>
-      <p>Kitchens, bathrooms, basements, decks, painting and the details in between. Pick a category to browse, and tap any photo to see it full size.</p>
+      <p>Kitchens, bathrooms, basements, decks, painting and the details in between. Pick a category to browse. Drag the before &amp; after sliders, and tap any photo to see it full size.</p>
     </div>
   </section>
 
   <section class="section" style="padding-top:64px">
     <div class="wrap">
       <div class="filters" id="filters" role="group" aria-label="Filter by project type"></div>
+      <div id="ba-wrap" class="ba-wrap" hidden>
+        <div class="ba-wrap-head"><span class="eyebrow">Before &amp; After</span><p>Drag the handle to compare.</p></div>
+        <div class="ba-list" id="ba-list"></div>
+      </div>
+      <div id="photos-head" class="ba-wrap-head" hidden><span class="eyebrow">Project Photos</span></div>
       <div class="gallery-grid" id="gallery-grid"></div>
     </div>
   </section>
 
-  <section class="section ba-section">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div>
-          <span class="eyebrow">Before &amp; After</span>
-          <h2>See the transformation.</h2>
-        </div>
-        <p>Drag the handle on each photo to compare the space before and after.</p>
-      </div>
-      <div class="ba-pair">
-        <div class="reveal ba-feature">
-          <div class="ba">
-            <img src="/images/bathroom-before.jpg" alt="Bathroom before" class="ba-before">
-            <img src="/images/bathroom-after.jpg" alt="Bathroom after" class="ba-after">
-            <span class="ba-label before">Before</span>
-            <span class="ba-label after">After</span>
-            <div class="ba-handle"><span class="ba-knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></div>
-            <input type="range" min="0" max="100" value="50" aria-label="Drag to compare the bathroom before and after">
-          </div>
-          <h3>Primary bathroom remodel</h3>
-        </div>
-        <div class="reveal">
-          <div class="ba">
-            <img src="/images/kitchen-before.jpg" alt="Kitchen before" class="ba-before">
-            <img src="/images/kitchen-after.jpg" alt="Kitchen after" class="ba-after">
-            <span class="ba-label before">Before</span>
-            <span class="ba-label after">After</span>
-            <div class="ba-handle"><span class="ba-knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></div>
-            <input type="range" min="0" max="100" value="50" aria-label="Drag to compare the kitchen before and after">
-          </div>
-          <h3>Kitchen transformation</h3>
-        </div>
-        <div class="reveal">
-          <div class="ba">
-            <img src="/images/deck-before.jpg" alt="Deck before" class="ba-before">
-            <img src="/images/deck-after.jpg" alt="Deck after" class="ba-after">
-            <span class="ba-label before">Before</span>
-            <span class="ba-label after">After</span>
-            <div class="ba-handle"><span class="ba-knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></div>
-            <input type="range" min="0" max="100" value="50" aria-label="Drag to compare the deck before and after">
-          </div>
-          <h3>Outdoor living transformation</h3>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section class="section quote" style="padding:96px 0">
     <div class="wrap" style="text-align:center;position:relative">

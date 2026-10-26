@@ -387,3 +387,15 @@ a.contact-item:hover { border-color: rgba(255,255,255,.4); background: rgba(255,
   .page-hero { padding: 130px 0 60px; }
   .work-grid { grid-template-rows: 240px 160px 160px; gap: 10px; }
 }
+
+/* Gallery before/after list */
+.ba-wrap { margin-bottom: 56px; }
+.ba-wrap-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+.ba-wrap-head p { color: var(--muted); font-size: 15px; }
+.ba-list { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.ba-item h3 { font-size: 22px; margin-top: 14px; }
+.ba-item h3 small { display: block; font-family: var(--body); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); font-weight: 700; margin-bottom: 4px; }
+.ba-list .ba-feature { grid-column: 1 / -1; }
+.ba-list .ba-feature .ba { aspect-ratio: 16 / 10; }
+@media (max-width: 860px) { .ba-list { grid-template-columns: 1fr; } .ba-list .ba-feature .ba { aspect-ratio: 4 / 3; } }
+[hidden] { display: none !important; }
