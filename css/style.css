@@ -107,13 +107,14 @@ button { font: inherit; }
 }
 .hero-bg { position: absolute; inset: 0; z-index: -2; }
 .hero-bg { background: #000 url(/images/film-poster.jpg) center / cover no-repeat; }
-.hero-video { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block; }
+.hero-video { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block; filter: brightness(.82) saturate(.85); }
 .hero::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
   background:
-    linear-gradient(90deg, rgba(14,15,15,.88) 0%, rgba(14,15,15,.6) 38%, rgba(14,15,15,.05) 70%),
-    linear-gradient(0deg, rgba(14,15,15,.85) 0%, rgba(14,15,15,0) 40%),
-    linear-gradient(180deg, rgba(14,15,15,.55) 0%, rgba(14,15,15,0) 18%);
+    linear-gradient(90deg, rgba(14,15,15,.9) 0%, rgba(14,15,15,.72) 40%, rgba(14,15,15,.25) 75%, rgba(14,15,15,.15) 100%),
+    linear-gradient(0deg, rgba(14,15,15,.9) 0%, rgba(14,15,15,0) 45%),
+    linear-gradient(180deg, rgba(14,15,15,.6) 0%, rgba(14,15,15,0) 20%),
+    rgba(14,15,15,.25);
   pointer-events: none;
 }
 .hero-inner { padding-top: 160px; padding-bottom: 56px; position: relative; z-index: 1; }
