@@ -84,5 +84,34 @@ initBeforeAfter();
   });
 })();
 
+// Brand film: play when on screen, pause when off screen or when toggled
+(() => {
+  const frame = document.querySelector('.film-frame');
+  if (!frame) return;
+  const video = frame.querySelector('video');
+  const btn = frame.querySelector('.film-toggle');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let userPaused = reduce;
+  const sync = () => {
+    frame.classList.toggle('paused', video.paused);
+    btn.setAttribute('aria-label', video.paused ? 'Play video' : 'Pause video');
+  };
+  video.addEventListener('play', sync);
+  video.addEventListener('pause', sync);
+  sync();
+  btn.addEventListener('click', () => {
+    if (video.paused) { userPaused = false; video.play().catch(() => {}); }
+    else { userPaused = true; video.pause(); }
+  });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting && !userPaused) video.play().catch(() => {});
+      else if (!e.isIntersecting) video.pause();
+    }, { threshold: 0.35 }).observe(frame);
+  } else if (!userPaused) {
+    video.play().catch(() => {});
+  }
+})();
+
 // Footer year
 document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
