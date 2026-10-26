@@ -4,7 +4,7 @@ const PHOTOS = [
   { src: '/images/bathroom-real.jpg',  category: 'bathrooms', title: 'Marble primary bathroom' },
   { src: '/images/kitchen.jpg',        category: 'kitchens',  title: 'Warm, considered kitchen' },
   { src: '/images/kitchen-after.jpg',  category: 'kitchens',  title: 'Open-plan kitchen refresh' },
-  { src: '/images/basement.jpg',       category: 'basements', title: 'Room to gather' },
+  { src: '/images/basement-real.jpg',  category: 'basements', title: 'Finished basement & wet bar' },
   { src: '/images/deck.jpg',           category: 'decks',     title: 'Outside, made useful' },
   { src: '/images/deck-after.jpg',     category: 'decks',     title: 'Evening-ready deck' },
   { src: '/images/entry.jpg',          category: 'other',     title: 'Custom entry & mudroom' },
