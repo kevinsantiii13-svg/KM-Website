@@ -2,6 +2,7 @@
 // category must be one of: kitchens, bathrooms, basements, decks, painting, other
 const PHOTOS = [
   { src: '/images/bathroom-real.jpg',  category: 'bathrooms', title: 'Marble primary bathroom' },
+  { src: '/images/bathroom2-real.jpg', category: 'bathrooms', title: 'Marble shower & soaking tub' },
   { src: '/images/kitchen.jpg',        category: 'kitchens',  title: 'Warm, considered kitchen' },
   { src: '/images/kitchen-after.jpg',  category: 'kitchens',  title: 'Open-plan kitchen refresh' },
   { src: '/images/basement-real.jpg',  category: 'basements', title: 'Finished basement & wet bar' },
