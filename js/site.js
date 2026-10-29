@@ -92,6 +92,16 @@ initBeforeAfter();
   const btn = frame.querySelector('.film-toggle');
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let userPaused = reduce;
+  // iPhone/Safari: make sure it is muted inline video so autoplay is allowed
+  video.muted = true; video.defaultMuted = true; video.playsInline = true;
+  video.setAttribute('muted', ''); video.setAttribute('playsinline', ''); video.setAttribute('webkit-playsinline', '');
+  const tryPlay = () => { if (!userPaused) video.play().catch(() => {}); };
+  tryPlay();
+  video.addEventListener('loadeddata', tryPlay, { once: true });
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
+  // If the phone blocked autoplay (e.g. Low Power Mode), start on the first touch or scroll
+  const kick = () => { if (video.paused) tryPlay(); };
+  ['touchstart', 'scroll', 'click'].forEach(ev => window.addEventListener(ev, kick, { passive: true, once: true }));
   const sync = () => {
     frame.classList.toggle('paused', video.paused);
     btn.setAttribute('aria-label', video.paused ? 'Play video' : 'Pause video');
