@@ -424,6 +424,22 @@ a.contact-item:hover { border-color: rgba(255,255,255,.4); background: rgba(255,
   .site-header:not(.solid) { background: var(--charcoal); }
 }
 
+/* Licenses */
+.license-badge { display: flex; align-items: center; gap: 14px; margin-top: 22px; color: rgba(255,255,255,.85); }
+.license-icon { width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.25); display: grid; place-items: center; flex-shrink: 0; color: var(--red); }
+.license-icon svg { width: 22px; height: 22px; }
+.license-badge strong { display: block; font-size: 15.5px; font-weight: 600; color: #fff; }
+.license-badge small { display: block; font-size: 13.5px; color: rgba(255,255,255,.6); letter-spacing: .02em; margin-top: 2px; }
+.footer-licenses { margin-top: 44px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 13.5px; letter-spacing: .04em; color: rgba(255,255,255,.62); }
+.footer-licenses strong { color: #fff; font-weight: 600; }
+.footer-licenses + .footer-bottom { margin-top: 18px; }
+.license-badge small span + span::before { content: "\00b7"; margin: 0 7px; }
+@media (max-width: 860px) {
+  .license-badge { align-items: flex-start; }
+  .license-badge small span { display: block; }
+  .license-badge small span + span::before { content: none; }
+}
+
 /* ===== Phone-only layout ===== */
 .phone-only { display: none; }
 video::-webkit-media-controls-start-playback-button { display: none !important; -webkit-appearance: none; }
