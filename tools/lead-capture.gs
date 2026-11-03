@@ -1,0 +1,25 @@
+// KM Home Improvement — lead capture (Google Apps Script)
+// Receives quote-form submissions from the website, adds a row to the "KM Leads"
+// sheet, and emails the business a copy.
+const SHEET_ID = '1avs9EmxQJgjdAPX4vgCflGL2Q3U9BqL-3-3vexiKgak';
+const NOTIFY_EMAIL = 'kevinsantiii13@gmail.com'; // change to the business email if different
+
+function doPost(e) {
+  try {
+    const d = JSON.parse(e.postData.contents);
+    const clean = v => String(v || '').slice(0, 2000).replace(/^[=+\-@]/, "'$&"); // stop sheet formula injection
+    const sheet = SpreadsheetApp.openById(SHEET_ID).getSheets()[0];
+    sheet.appendRow([new Date(), clean(d.name), clean(d.phone), clean(d.email), clean(d.town),
+                     clean(d.project), clean(d.details), clean(d.page), 'New', '']);
+    MailApp.sendEmail({
+      to: NOTIFY_EMAIL,
+      subject: 'New website lead: ' + clean(d.project) + ' — ' + clean(d.name),
+      body: ['Name: ' + clean(d.name), 'Phone: ' + clean(d.phone), 'Email: ' + clean(d.email),
+             'Town: ' + clean(d.town), 'Project: ' + clean(d.project), '', clean(d.details)].join('\n'),
+      replyTo: d.email && /^\S+@\S+$/.test(d.email) ? d.email : NOTIFY_EMAIL
+    });
+    return ContentService.createTextOutput('ok');
+  } catch (err) {
+    return ContentService.createTextOutput('error');
+  }
+}
