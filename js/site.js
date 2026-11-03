@@ -7,7 +7,7 @@ const KM = {
   email: '',
   // Lead capture endpoint (Google Apps Script web app, see tools/lead-capture.gs).
   // When set, quote requests are saved as leads and emailed to the business.
-  leadUrl: '',
+  leadUrl: 'https://script.google.com/macros/s/AKfycbxx_kS5MusLE5UEcp5nBPicE2WLck0C5L9S7F7fo25Eb4wrjNITWs-adBdxcBsvra1x/exec',
 };
 
 // Header: solid background after scrolling, mobile menu toggle
