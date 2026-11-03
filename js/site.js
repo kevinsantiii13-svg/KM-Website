@@ -5,6 +5,9 @@ const KM = {
   // Set this to the business email to have quote requests open an email to it.
   // While empty, the form opens a text message to the phone number instead.
   email: '',
+  // Lead capture endpoint (Google Apps Script web app, see tools/lead-capture.gs).
+  // When set, quote requests are saved as leads and emailed to the business.
+  leadUrl: 'https://script.google.com/macros/s/AKfycbxx_kS5MusLE5UEcp5nBPicE2WLck0C5L9S7F7fo25Eb4wrjNITWs-adBdxcBsvra1x/exec',
 };
 
 // Header: solid background after scrolling, mobile menu toggle
@@ -72,14 +75,30 @@ initBeforeAfter();
       d.details ? `Details: ${d.details}` : '',
     ].filter(Boolean);
     const body = encodeURIComponent(lines.join('\n'));
-    if (KM.email) {
-      const subject = encodeURIComponent(`Quote request — ${d.project}`);
-      window.location.href = `mailto:${KM.email}?subject=${subject}&body=${body}`;
-      status.textContent = 'Your email app should open with your request filled in. Just press send.';
-    } else {
-      window.location.href = `sms:${KM.phoneTel}?&body=${body}`;
-      status.innerHTML = `Your messages app should open with your request filled in. If it doesn't, call or text us at <a href="tel:${KM.phoneTel}"><strong>${KM.phone}</strong></a>.`;
+    const fallback = () => {
+      if (KM.email) {
+        const subject = encodeURIComponent(`Quote request — ${d.project}`);
+        window.location.href = `mailto:${KM.email}?subject=${subject}&body=${body}`;
+        status.textContent = 'Your email app should open with your request filled in. Just press send.';
+      } else {
+        window.location.href = `sms:${KM.phoneTel}?&body=${body}`;
+        status.innerHTML = `Your messages app should open with your request filled in. If it doesn't, call or text us at <a href="tel:${KM.phoneTel}"><strong>${KM.phone}</strong></a>.`;
+      }
+    };
+    if (KM.leadUrl) {
+      const btn = form.querySelector('button[type=submit]');
+      btn.disabled = true;
+      fetch(KM.leadUrl, {
+        method: 'POST', mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ ...d, page: location.pathname }),
+      }).then(() => {
+        form.reset();
+        status.innerHTML = `Thanks ${d.name.split(' ')[0]}! We got your request and will call you soon. Need us sooner? Call or text <a href="tel:${KM.phoneTel}"><strong>${KM.phone}</strong></a>.`;
+      }).catch(fallback).finally(() => { btn.disabled = false; status.classList.add('show'); });
+      return;
     }
+    fallback();
     status.classList.add('show');
   });
 })();
