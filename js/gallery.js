@@ -3,10 +3,15 @@
 const PHOTOS = [
   { src: '/images/bathroom-real.jpg',  category: 'bathrooms', title: 'Marble primary bathroom' },
   { src: '/images/bathroom2-real.jpg', category: 'bathrooms', title: 'Marble shower & soaking tub' },
+  { src: '/images/bathroom3-real.jpg', category: 'bathrooms', title: 'Marble walk-in shower with sliding glass' },
   { src: '/images/kitchen.jpg',        category: 'kitchens',  title: 'Warm, considered kitchen' },
   { src: '/images/kitchen-after.jpg',  category: 'kitchens',  title: 'Open-plan kitchen refresh' },
   { src: '/images/basement-real.jpg',  category: 'basements', title: 'Finished basement & wet bar' },
   { src: '/images/deck-real.jpg',      category: 'decks',     title: 'Deck & white vinyl railing rebuild' },
+  { src: '/images/deck6-real.jpg',     category: 'decks',     title: 'Composite deck with lattice skirting' },
+  { src: '/images/deck3-real.jpg',     category: 'decks',     title: 'Gray composite decking & white rails' },
+  { src: '/images/deck4-real.jpg',     category: 'decks',     title: 'Two-tone deck with black balusters' },
+  { src: '/images/deck5-real.jpg',     category: 'decks',     title: 'Wraparound stairs & lattice base' },
   { src: '/images/entry.jpg',          category: 'other',     title: 'Custom entry & mudroom' },
 ];
 
