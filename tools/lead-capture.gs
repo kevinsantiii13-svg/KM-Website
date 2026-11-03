@@ -20,6 +20,18 @@ function doPost(e) {
     });
     return ContentService.createTextOutput('ok');
   } catch (err) {
-    return ContentService.createTextOutput('error');
+    console.error(err);
+    return ContentService.createTextOutput('error: ' + err);
   }
+}
+
+// Open the web app URL in a browser to check it is live.
+function doGet() { return ContentService.createTextOutput('KM lead capture is live'); }
+
+// Run this once from the editor (Run button) to grant permissions and send a test lead.
+function testLead() {
+  const out = doPost({ postData: { contents: JSON.stringify({
+    name: 'TEST Lead', phone: '000-000-0000', email: '', town: 'Test',
+    project: 'Painting', details: 'Test lead - delete me', page: '/test' }) } });
+  Logger.log(out.getContent());
 }
