@@ -4,6 +4,7 @@ const PHOTOS = [
   { src: '/images/bathroom-real.jpg',  category: 'bathrooms', title: 'Marble primary bathroom' },
   { src: '/images/bathroom2-real.jpg', category: 'bathrooms', title: 'Marble shower & soaking tub' },
   { src: '/images/bathroom3-real.jpg', category: 'bathrooms', title: 'Marble walk-in shower with sliding glass' },
+  { src: '/images/bathroom4-real.jpg', category: 'bathrooms', title: 'Glass steam shower with brushed gold fixtures' },
   { src: '/images/kitchen.jpg',        category: 'kitchens',  title: 'Warm, considered kitchen' },
   { src: '/images/kitchen-after.jpg',  category: 'kitchens',  title: 'Open-plan kitchen refresh' },
   { src: '/images/basement-real.jpg',  category: 'basements', title: 'Finished basement & wet bar' },
