@@ -2,7 +2,7 @@
 // Receives quote-form submissions from the website, adds a row to the "KM Leads"
 // sheet, and emails the business a copy.
 const SHEET_ID = '1avs9EmxQJgjdAPX4vgCflGL2Q3U9BqL-3-3vexiKgak';
-const NOTIFY_EMAIL = 'kevinsantiii13@gmail.com'; // change to the business email if different
+const NOTIFY_EMAIL = 'kmhomeimprovement@hotmail.com,kevinsantiii13@gmail.com'; // comma-separated
 
 function doPost(e) {
   try {
